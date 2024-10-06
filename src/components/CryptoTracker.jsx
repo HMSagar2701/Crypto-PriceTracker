@@ -10,7 +10,6 @@ const CryptoTracker = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [currency, setCurrency] = useState('usd');
-  const [darkMode, setDarkMode] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10);
   const [sortBy, setSortBy] = useState('market_cap');
@@ -72,7 +71,7 @@ const CryptoTracker = () => {
   }
 
   return (
-    <div className={`container mx-auto p-6 ${darkMode ? 'bg-gray-900 text-gray-200' : 'bg-white text-gray-800'} rounded-lg shadow-lg transition-colors duration-300`}>
+    <div className="container mx-auto p-6 bg-white text-gray-800 rounded-lg shadow-lg transition-colors duration-300">
       <SearchAndFilter 
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
@@ -81,17 +80,14 @@ const CryptoTracker = () => {
         sortBy={sortBy}
         setSortBy={setSortBy}
         fetchCryptoData={fetchCryptoData}
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
       />
 
-      <CryptoTable currentData={currentData} toggleFavorite={toggleFavorite} darkMode={darkMode} />
+      <CryptoTable currentData={currentData} toggleFavorite={toggleFavorite} />
 
       <Pagination 
         currentPage={currentPage} 
         totalPages={totalPages} 
         setCurrentPage={setCurrentPage} 
-        darkMode={darkMode} 
       />
 
       {selectedCrypto && <PriceChart coinId={selectedCrypto} />}
