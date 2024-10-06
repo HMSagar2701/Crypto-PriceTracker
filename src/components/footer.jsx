@@ -4,7 +4,7 @@ const Footer = ({ darkMode }) => {
   return (
     <footer
       className={`p-6 text-center transition-colors duration-300 ${
-        darkMode ? 'bg-black text-gray-100' : 'bg-gray-200 text-gray-800'
+        darkMode ? 'bg-black text-gray-200' : 'bg-gray-700 text-gray-200'
       }`}
     >
       <p className="text-sm">

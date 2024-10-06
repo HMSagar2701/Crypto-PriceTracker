@@ -7,8 +7,8 @@ import Footer from './components/footer';
 
 const App = () => {
   return (
-    <div>
-      <Header /> {/* Add Header */}
+    <div className="relative min-h-screen bg-gray-900 text-white">
+      <Header />
       <CryptoTracker />
       <Footer />
     </div>
